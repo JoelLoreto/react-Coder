@@ -1,5 +1,6 @@
 import './App.css';
-import NavBar from './components/NavBar';
+import ItemListContainer from './Components/ItemListContainer';
+import NavBar from './Components/NavBar';
 
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
    <>
    
    <NavBar/> 
+   <ItemListContainer greeting={"Bienvenido a Cripto Jack"}/>
    </>
   );
 }
