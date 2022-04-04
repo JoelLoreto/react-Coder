@@ -1,26 +1,27 @@
 import { useState } from "react"
 
-const ItemCount = () => {
+const ItemCount = ({onAdd, initial}) => {
 
-    const [contador, setContador] = useState(1)
+    const [count, setCount] = useState(initial)
     const sumarContador = () => {
-        if (contador > 4) {
+        if (count > 4) {
             alert('no es una cantidad valida')
-        } else setContador(contador + 1)
+        } else setCount(count + 1)
     }
 
     const restarContador = () => {
-        if (contador < 1) {
+        if (count < 1) {
             alert('no es una cantidad valida')
-        } else setContador(contador - 1)
+        } else setCount(count - 1)
     }
 
 
     return (
         <>
-            <p>Elegir cantidad de productos: {contador}</p>
-            <button onClick={sumarContador}>agregar</button>
+            <p>Elegir cantidad de productos: {count}</p>
             <button onClick={restarContador}>quitar</button>
+            <button onClick={sumarContador}>agregar</button>
+            <button onClick={ () => onAdd(count)}>Agregar al carrito</button>
         </>
     )
 }
