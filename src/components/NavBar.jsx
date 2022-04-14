@@ -6,7 +6,7 @@ const NavBar = () => {
         <>
             <header id="header">
 
-                <h1>Cripto Jack</h1>
+                <h1>Tienda Jack</h1>
 
                 <p>Bienvenido</p>
                <CartWidget/>

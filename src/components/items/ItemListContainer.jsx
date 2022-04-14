@@ -1,21 +1,46 @@
-import React from "react";
-import ItemCount from "../ItemCount";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 
 
 const ItemListContainer = ({ greeting }) => {
 
-    function onAdd(count) {
-        if (count === 0) {
-            alert('no se agegaron productos')
-        } else alert('se agregaron' + ' ' + count + ' ' + 'productos')
-    }
+    let productosDetalles = [
+        { id: 1, name: "Raqueta", precio: "50000", categoria: "deporte" },
+        { id: 2, name: "Pelotita de tenis", precio: "2000", categoria: "deporte" },
+        { id: 3, name: "Remera", precio: "2000", categoria: "ropa" }
+    ]
+    const [productos, setProductos] = useState([])
+    const { id } = useParams()
+
+    useEffect(() => {
+
+        console.log(id)
+        const promesaProductos = new Promise((res, rej) => {
+
+            setTimeout(() => {
+
+                res(productosDetalles)
+            }, 1000)
+        })
+
+        promesaProductos.then((res) => {
+
+            setProductos(res)
+
+        })
+    }, [])
+
+
 
     return (
         <>
             <h2 className="saludo">{greeting}</h2>
-            <ItemList />
-            <ItemCount initial={1} onAdd={onAdd} />
+
+            PRODUCTOS:<br />
+            <ItemList productos={productos} />
+
+
 
         </>
     )
