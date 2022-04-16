@@ -5,15 +5,12 @@ const ItemList = ({ productos }) => {
 
     return (
         <>
-          {productos && productos.length > 0 ?
-                productos.map(item => {
-                    return <div key={item.id}>
-                        <Item item={item} />
-                    </div>
-                })
-            : "loading"} 
-
-             
+             {productos && productos.length > 0 ?
+               productos.map((productos) =>(
+                    <Item key ={productos.id} productos= {productos}/>
+                ))
+                : "loading"}
+                
                 
         </>
     )
