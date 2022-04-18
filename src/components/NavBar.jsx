@@ -7,7 +7,9 @@ const NavBar = () => {
         <>
             <header id="header">
 
-                <h1>Tienda Jack</h1>
+                <h1>
+                    <Link to="/">Tienda Jack</Link>
+                </h1>
 
                 <p>Bienvenido</p>
                 <CartWidget />

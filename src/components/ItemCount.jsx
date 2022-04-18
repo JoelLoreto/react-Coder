@@ -1,18 +1,16 @@
-import { useState } from "react"
+import {useState} from "react";
 
-const ItemCount = ({onAdd, initial}) => {
+
+const ItemCount = ({onAdd, initial, stock}) => {
 
     const [count, setCount] = useState(initial)
+    
     const sumarContador = () => {
-        if (count > 4) {
-            alert('no es una cantidad valida')
-        } else setCount(count + 1)
+       count < stock && setCount(count +1)
     }
 
     const restarContador = () => {
-        if (count < 1) {
-            alert('no es una cantidad valida')
-        } else setCount(count - 1)
+     count > initial && setCount(count -1)
     }
 
 
