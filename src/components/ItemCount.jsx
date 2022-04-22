@@ -1,10 +1,12 @@
 import {useState} from "react";
 
 
+
 const ItemCount = ({onAdd, initial, stock}) => {
 
     const [count, setCount] = useState(initial)
     
+   
     const sumarContador = () => {
        count < stock && setCount(count +1)
     }
@@ -22,6 +24,7 @@ const ItemCount = ({onAdd, initial, stock}) => {
             <button onClick={ () => onAdd(count)}>Agregar al carrito</button>
         </>
     )
+    
 }
 
 export default ItemCount

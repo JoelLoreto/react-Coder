@@ -74,7 +74,7 @@ export const traerProductos = (categoryId) => {
             } else {
                 resolve(productos)
             }
-        }, 1000);
+        }, 1000 );
     })
 }
 
@@ -83,7 +83,7 @@ export const traerProducto = (id) => {
         const productoElegido = productos.find((producto) => producto.id === Number(id))
         setTimeout(() => {
             resolve(productoElegido)
-        }, 1000);
+        }, 1000 );
     })
 }
 

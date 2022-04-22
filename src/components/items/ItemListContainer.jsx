@@ -9,7 +9,7 @@ const ItemListContainer = () => {
    
     const [productos, setProductos] = useState([])
     const {categoryId} = useParams()
-    console.log(categoryId)
+    
  
 
     useEffect(() => {
